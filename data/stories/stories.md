@@ -9,7 +9,7 @@
   - utter_goodbye
 
 ## search transactions happy path
-* Greet 
+* greet 
   - utter_greet
 * search_transactions
   - action_search_transact
