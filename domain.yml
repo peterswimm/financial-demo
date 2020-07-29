@@ -1,17 +1,17 @@
 session_config:
-  session_expiration_time: 0
+  session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
 
 intents:
+- search_transactions
+- check_balance
 - greet
 - goodbye
 - thankyou
-- search_transactions
-- check_balance
 
 entities:
-- PERSON
 - vendor_name
+- PERSON
 
 slots:
   PERSON:
@@ -23,20 +23,21 @@ slots:
 
 responses:
   utter_found_spend_transactions:
-  - text: 'I found {numtransacts} transactions{vendor_name} totalling ${total}'
+    - text: 'I found {numtransacts} transactions{vendor_name} totalling ${total}'
   utter_no_vendor_name:
-  - text: Sorry, that's not a recognized vendor.
+    - text: Sorry, that's not a recognized vendor.
   utter_goodbye:
-  - text: Bye
+    - text: Bye
   utter_greet:
-  - text: Hi, how can I help you?
+    - text: Hi, how can I help you?
   utter_noworries:
-  - text: You're welcome :)
+    - text: You're welcome :)
   utter_default:
-  - text: Sorry, I didn't get that. Could you rephrase?
+    - text: Sorry, I didn't get that. Could you rephrase?
   utter_account_balance:
-  - text: "Your balance is ${init_account_balance}"
+    - text: "Your balance is ${init_account_balance}"
 
 actions:
 - action_search_transact
 - action_account_balance
+
